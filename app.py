@@ -49,7 +49,7 @@ def get_imgur_image(text):
 @app.route('/', methods=['GET', 'POST'])
 def return_imgur_image():
     if request.method == 'POST':
-        text = request.form['text']
+        text = request.form['resolvedQuery']
         req = {'text': get_imgur_image(text)}
         return jsonify(**req)
     elif request.method == 'GET':
